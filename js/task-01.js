@@ -1,16 +1,36 @@
-const mainList = document.querySelector("#categories");
-const mainListItem = document.querySelectorAll(".item");
+const todoCard = document.querySelector(".todo-card");
+const editButton = document.querySelector(".edit");
+const deleteButton = document.querySelector(".delete");
+const colorChangeButton = document.querySelector(".color-change");
+const colorOptions = document.querySelector(".color-options");
 
-console.log(`Number of categories: ${mainListItem.length}`);
+editButton.addEventListener("click", () => {
+  const newTitle = prompt(
+    "Enter new title:",
+    todoCard.querySelector("h3").textContent
+  );
 
-function getList(arry) {
-  arry.forEach((element) => {
-    const categoryName = element.firstElementChild;
-    const elementsCase = element.lastElementChild;
-    const elementsLength = elementsCase.querySelectorAll("li");
-    console.log(`Category: ${categoryName.textContent}
-Elements: ${elementsLength.length}`);
-  });
-}
+  if (newTitle !== null) {
+    todoCard.querySelector("h3").textContent = newTitle;
+  }
+});
 
-getList(mainListItem);
+deleteButton.addEventListener("click", () => {
+  todoCard.remove();
+});
+
+colorChangeButton.addEventListener("click", () => {
+  colorOptions.style.display = "flex";
+});
+
+colorOptions.addEventListener("click", (event) => {
+  const colorOption = event.target.closest(".color-option");
+  if (colorOption) {
+    const backgroundColor = colorOption.style.backgroundColor;
+    const rgbaColor = backgroundColor
+      .replace(")", ", 0.25)")
+      .replace("rgb", "rgba");
+    todoCard.style.backgroundColor = rgbaColor;
+    colorOptions.style.display = "none";
+  }
+});
