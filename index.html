@@ -10,7 +10,8 @@
   <body>
     <div class="todo-card">
       <h3>Title</h3>
-      <textarea rows="4" placeholder="Enter task"></textarea>
+      <p class="toDoText"></p>
+
       <div class="buttons-container">
         <button class="edit">Edit</button>
         <button class="delete">Delete</button>
@@ -21,13 +22,17 @@
             <div class="color-option" style="background-color: #28a745"></div>
             <div class="color-option" style="background-color: #ffc107"></div>
             <div class="color-option" style="background-color: #dc3545"></div>
-            <div class="color-option" style="background-color: #6c757d"></div>
+            <div
+              class="color-option"
+              style="background-color: rgb(105, 1, 105)"
+            ></div>
           </div>
         </div>
       </div>
     </div>
     <div id="customPrompt" class="custom-prompt">
-      <input type="text" id="newTitleInput" placeholder="Enter new title" />
+      <input type="text" id="newTitleInput" placeholder="Enter task title" />
+      <textarea rows="4" id="newText" placeholder="Enter task"></textarea>
 
       <button id="submitPrompt">Submit</button>
     </div>

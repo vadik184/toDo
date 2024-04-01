@@ -28,11 +28,11 @@ body {
   justify-content: center;
 }
 
-.todo-card textarea {
+.toDoText {
   width: 95%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   resize: vertical;
 }
@@ -106,19 +106,24 @@ body {
 .custom-prompt {
   display: none;
   position: fixed;
+  width: 250px;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  gap: 20px;
 }
-
-.custom-prompt input {
+#newText {
   width: 100%;
   margin-bottom: 10px;
   padding: 5px;
+  resize: none;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .custom-prompt button {
@@ -128,3 +133,10 @@ body {
   color: #fff;
   cursor: pointer;
 }
+#newTitleInput {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* #newText {
+  width: 90%;
+} */
